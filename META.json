@@ -44,8 +44,15 @@
       }
    },
    "release_status" : "stable",
-   "resources" : {},
-   "version" : "0.001",
+   "resources" : {
+      "homepage" : "https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty.git",
+         "web" : "https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty"
+      }
+   },
+   "version" : "0.002",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

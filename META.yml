@@ -28,8 +28,10 @@ requires:
   Pod::Elemental: 0.092970
   Pod::Elemental::Transformer::List: 0
   Pod::Weaver: 3.100310
-resources: {}
-version: 0.001
+resources:
+  homepage: https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty
+  repository: https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty.git
+version: 0.002
 x_Dist_Zilla:
   plugins:
     -
