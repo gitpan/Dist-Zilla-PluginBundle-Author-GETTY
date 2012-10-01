@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1738-09-21 00:00:00 +0000 to present.
+Changes from 1738-12-18 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.002 at 2012-07-05 12:37:34 +0000
+version 0.003 at 2012-10-01 01:38:02 +0000
 ------------------------------------------
+
+  Change: 315f9d496cf227454d24b57c92604735fe7141f7
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2012-10-01 03:37:30 +0000
+
+    Added Git::CheckFor::CorrectBranch 
 
   Change: e10b73aaf0c75f4331dbda6fa12b9f9f8f3676ab
   Author: Torsten Raudssus <torsten@raudss.us>

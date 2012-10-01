@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.002';
+  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.003';
 }
 # ABSTRACT: BeLike::GETTY when you build your dists
 
@@ -94,6 +94,12 @@ sub configure {
 		}
 	]);
 
+  $self->add_plugins([
+    'Git::CheckFor::CorrectBranch' => {
+      release_branch => 'master',
+    },
+  ]);
+
   $self->add_plugins(
     [ Prereqs => 'TestMoreWithSubtests' => {
       -phase => 'test',
@@ -139,7 +145,7 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 
@@ -165,6 +171,9 @@ This is the plugin bundle that GETTY uses.  It is equivalent to:
   config_plugin = @GETTY
 
   [Repository]
+  
+  [Git::CheckFor::CorrectBranch]
+  release_branch = master
 
   [@Git]
   tag_format = %v
