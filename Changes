@@ -1,10 +1,17 @@
 ==================================================
-Changes from 1739-04-22 00:00:00 +0000 to present.
+Changes from 1739-04-23 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.004 at 2013-02-03 23:50:31 +0000
+version 0.005 at 2013-02-04 02:10:26 +0000
 ------------------------------------------
+
+  Change: 6c78010aa715064046951251162ef07d011d44c4
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-04 03:10:04 +0000
+
+    Added several features like Dist::Zilla::Plugin::Run integration and
+    duckpan / no_cpan / no_install options 
 
   Change: f09949ab9b8c386bec2b0211a930b670cfe6591c
   Author: Torsten Raudssus <torsten@raudss.us>
