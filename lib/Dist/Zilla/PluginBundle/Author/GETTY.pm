@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.005';
+  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.006';
 }
 # ABSTRACT: BeLike::GETTY when you build your dists
 
@@ -100,10 +100,9 @@ sub configure {
     if $self->no_cpan and $self->author ne 'GETTY';
 
   if ($self->no_cpan) {
-    $self->add_bundle('@Filter' => {
+    $self->add_bundle('Filter' => {
       -bundle => '@Basic',
-      -remove => 'ShareDir',
-      -remove => 'UploadToCPAN',
+      -remove => ['UploadToCPAN'],
     });
   } else {
     $self->add_bundle('@Basic');
@@ -147,7 +146,7 @@ sub configure {
     if ($self->$func) {
       my $plugin = join('',map { ucfirst($_) } split(/_/,$_));
       $self->add_plugins([
-        $plugin => {
+        'Run::'.$plugin => {
           run => $self->$func,
         }
       ]);
@@ -229,7 +228,7 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 DESCRIPTION
 
@@ -252,7 +251,7 @@ This is the plugin bundle that GETTY uses.  It is equivalent to:
   do_metadata = 1
 
   [PodWeaver]
-  config_plugin = @GETTY
+  config_plugin = @Author::GETTY
 
   [Repository]
   

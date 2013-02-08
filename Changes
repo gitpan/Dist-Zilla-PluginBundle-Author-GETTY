@@ -1,10 +1,22 @@
 ==================================================
-Changes from 1739-04-23 00:00:00 +0000 to present.
+Changes from 1739-04-27 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.005 at 2013-02-04 02:10:26 +0000
+version 0.006 at 2013-02-08 00:20:37 +0000
 ------------------------------------------
+
+  Change: bb1a445633e19bf28621710d29a45a7a9846df73
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-08 01:20:20 +0000
+
+    Hups... fixed the new features ;) TRALALALALA 
+
+  Change: 077d8f24231ef2514a222233d0be5218bb3fdab1
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-04 03:18:49 +0000
+
+    Fixed small typo in SYNOPSIS 
 
   Change: 6c78010aa715064046951251162ef07d011d44c4
   Author: Torsten Raudssus <torsten@raudss.us>
