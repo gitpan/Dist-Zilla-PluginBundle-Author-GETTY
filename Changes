@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1739-04-27 00:00:00 +0000 to present.
+Changes from 1739-05-15 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.006 at 2013-02-08 00:20:37 +0000
+version 0.007 at 2013-02-26 01:46:58 +0000
 ------------------------------------------
+
+  Change: 6ddd275592612a64b871d26f1aa2c3ca0f758adf
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-26 02:46:49 +0000
+
+    Added no_makemaker flag 
 
   Change: bb1a445633e19bf28621710d29a45a7a9846df73
   Author: Torsten Raudssus <torsten@raudss.us>

@@ -60,7 +60,7 @@
          "web" : "https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty"
       }
    },
-   "version" : "0.006",
+   "version" : "0.007",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.014002"

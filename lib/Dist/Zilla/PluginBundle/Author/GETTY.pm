@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.006';
+  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.007';
 }
 # ABSTRACT: BeLike::GETTY when you build your dists
 
@@ -65,6 +65,13 @@ has no_install => (
   default => sub { $_[0]->payload->{no_install} },
 );
 
+has no_makemaker => (
+  is      => 'ro',
+  isa     => 'Bool',
+  lazy    => 1,
+  default => sub { $_[0]->payload->{no_makemaker} },
+);
+
 has is_task => (
   is      => 'ro',
   isa     => 'Bool',
@@ -99,10 +106,16 @@ sub configure {
   $self->log_fatal("you must not specify both author and no_cpan")
     if $self->no_cpan and $self->author ne 'GETTY';
 
-  if ($self->no_cpan) {
+  $self->log_fatal("no_install can't be used together with no_makemaker")
+    if $self->no_install and $self->no_makemaker;
+
+  if ($self->no_cpan || $self->no_makemaker) {
+    my @removes;
+    push @removes, 'UploadToCPAN' if $self->no_cpan;
+    push @removes, 'MakeMaker' if $self->no_makemaker;
     $self->add_bundle('Filter' => {
       -bundle => '@Basic',
-      -remove => ['UploadToCPAN'],
+      -remove => [@removes],
     });
   } else {
     $self->add_bundle('@Basic');
@@ -228,7 +241,7 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 DESCRIPTION
 
@@ -278,6 +291,7 @@ You can configure it (given values are default):
   no_cpan = 0
   duckpan = 0
   no_install = 0
+  no_makemaker = 0
 
 If the C<task> argument is given to the bundle, PodWeaver is replaced with
 TaskWeaver and Git::NextVersion is replaced with AutoVersion, you can also
