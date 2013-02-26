@@ -3,8 +3,15 @@ Changes from 1739-05-15 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.007 at 2013-02-26 01:46:58 +0000
+version 0.008 at 2013-02-26 21:26:42 +0000
 ------------------------------------------
+
+  Change: e6c852623009cc9a2380748e7dd14e567eec89d7
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-02-26 22:26:23 +0000
+
+    Added new features to modify install release command (or deactivate
+    it totally) 
 
   Change: 6ddd275592612a64b871d26f1aa2c3ca0f758adf
   Author: Torsten Raudssus <torsten@raudss.us>

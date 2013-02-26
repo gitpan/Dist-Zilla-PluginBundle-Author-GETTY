@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.007';
+  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.008';
 }
 # ABSTRACT: BeLike::GETTY when you build your dists
 
@@ -35,6 +35,20 @@ has author => (
   isa     => 'Str',
   lazy    => 1,
   default => sub { $_[0]->payload->{author} || 'GETTY' },
+);
+
+has installrelease_command => (
+  is      => 'ro',
+  isa     => 'Str',
+  lazy    => 1,
+  default => sub { $_[0]->payload->{installrelease_command} || 'cpanm .' },
+);
+
+has no_installrelease => (
+  is      => 'ro',
+  isa     => 'Bool',
+  lazy    => 1,
+  default => sub { $_[0]->payload->{no_installrelease} },
 );
 
 has release_branch => (
@@ -175,11 +189,13 @@ sub configure {
 		GithubMeta
 	));
 
-	$self->add_plugins([
-		'InstallRelease' => {
-			install_command => 'cpanm .',
-		}
-	]);
+  unless ($self->no_installrelease) {
+    $self->add_plugins([
+      'InstallRelease' => {
+        install_command => $self->installrelease_command,
+      }
+    ]);
+  }
 
   unless ($self->no_cpan) {
   	$self->add_plugins([
@@ -241,7 +257,7 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 DESCRIPTION
 
@@ -292,6 +308,8 @@ You can configure it (given values are default):
   duckpan = 0
   no_install = 0
   no_makemaker = 0
+  no_installrelease = 0
+  installrelease_command = cpanm .
 
 If the C<task> argument is given to the bundle, PodWeaver is replaced with
 TaskWeaver and Git::NextVersion is replaced with AutoVersion, you can also
