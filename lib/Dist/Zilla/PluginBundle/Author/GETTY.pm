@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.008';
+  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.009';
 }
 # ABSTRACT: BeLike::GETTY when you build your dists
 
@@ -213,10 +213,11 @@ sub configure {
   ]);
 
   $self->add_plugins(
-    [ Prereqs => 'TestMoreWithSubtests' => {
+    [ Prereqs => 'TestsOfAuthorGETTY' => {
       -phase => 'test',
       -type  => 'requires',
-      'Test::More' => '0.96'
+      'Test::More' => '0.96',
+      'Test::LoadAllModules' => '0.021',
     } ],
   );
 
@@ -257,7 +258,7 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 DESCRIPTION
 
