@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.010';
+  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.011';
 }
 # ABSTRACT: BeLike::GETTY when you build your dists
 
@@ -291,11 +291,36 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.010
+version 0.011
+
+=head1 SYNOPSIS
+
+  name    = Alien-ffmpeg
+  author  = You User <you@universe.org>
+  license = Perl_5
+  copyright_holder = You User
+  copyright_year   = 2013
+
+  [@Author::GETTY]
+  author = YOUONCPAN
 
 =head1 DESCRIPTION
 
-This is the plugin bundle that GETTY uses.  It is equivalent to:
+This is the plugin bundle that GETTY uses. You can configure it (given values
+are default):
+
+  [@Author::GETTY]
+  author = GETTY
+  release_branch = master
+  weaver_config = @Author::GETTY
+  no_cpan = 0
+  duckpan = 0
+  no_install = 0
+  no_makemaker = 0
+  no_installrelease = 0
+  installrelease_command = cpanm .
+
+In default configuration it is equivalent to:
 
   [@Basic]
 
@@ -332,19 +357,6 @@ This is the plugin bundle that GETTY uses.  It is equivalent to:
   wrap_column = 74
   debug = 0
 
-You can configure it (given values are default):
-
-  [@Author::GETTY]
-  author = GETTY
-  release_branch = master
-  weaver_config = @Author::GETTY
-  no_cpan = 0
-  duckpan = 0
-  no_install = 0
-  no_makemaker = 0
-  no_installrelease = 0
-  installrelease_command = cpanm .
-
 If the C<task> argument is given to the bundle, PodWeaver is replaced with
 TaskWeaver and Git::NextVersion is replaced with AutoVersion, you can also
 give independent a bigger major version with C<version>:
@@ -369,6 +381,102 @@ You can also use shortcuts for integrating L<Dist::Zilla::Plugin::Run>:
   run_test = script/tester.pl --name %n --version %v some_file.ext
   run_if_release_test = ./Build install
   run_if_release_test = make install
+
+It also combines on request with L<Dist::Zilla::Plugin::Alien>, you can set
+all parameter of the Alien plugin here, just by preceeding with I<alien_>, the
+only required parameter here is C<alien_repo>:
+
+  [@Author::GETTY]
+  alien_repo = http://myapp.org/releases
+  alien_bins = myapp myapp_helper
+  alien_name = myapp
+  alien_pattern_prefix = myapp-
+  alien_pattern_version = ([\d\.]+)
+  alien_pattern_suffix = \.tar\.gz
+  alien_pattern = myapp-([\d\.]+)\.tar\.gz
+
+=head1 ATTRIBUTES
+
+=head2 author
+
+This is used to name the L<CPAN|http://www.cpan.org/> author of the
+distribution. See L<Dist::Zilla::Plugin::Authority/authority>.
+
+=head2 release_branch
+
+This variable is used to set the release_branch, only releases on this branch
+will be allowed. See L<Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch/release_branch>.
+
+=head2 weaver_config
+
+This defines the L<PodWeaver> config that is used. See B<config_plugin> on
+L<Dist::Zilla::Plugin::PodWeaver>.
+
+=head2 no_cpan
+
+If set to 1, this attribute will disable L<Dist::Zilla::Plugin::UploadToCPAN>.
+By default a dzil release would release to L<CPAN|http://www.cpan.org/>.
+
+=head2 duckpan
+
+If set to 1, this attribute will activate L<Dist::Zilla::Plugin::UploadToDuckPAN>.
+With this way you upload your distribution to L<DuckPAN|http://duckpan.org>. So
+far only employee of L<DuckDuckGo|http://duckduckgo.com> can use this option.
+This attribute is NOT disabling the upload to CPAN. So if L</no_cpan> isn't
+set, the distribution will be uploaded to both. For more information about
+DuckPAN you can also go to the L<DuckDuckGo Community Platform|https://dukgo.com/>.
+
+=head2 no_install
+
+If set to 1, the resulting distribution can't be installed.
+
+=head2 no_makemaker
+
+=head2 no_installrelease
+
+By default, this bundle will install your distribution after the release. If
+you set this attribute to 1, then this will not happen. See
+L<Dist::Zilla::Plugin::InstallRelease>.
+
+If you use the L<Dist::Zilla::Plugin::Alien> options, then this one will not
+use L<Dist::Zilla::Plugin::InstallRelease>, instead, it will use the trick
+mentioned in L<Dist::Zilla::Plugin::Alien/InstallRelease>.
+
+=head2 installrelease_command
+
+If you don't like the usage of L<App::cpanminus> to install your distribution
+after install, you can set another command here. See B<install_command> on
+L<Dist::Zilla::Plugin::InstallRelease>.
+
+=head1 SEE ALSO
+
+L<Dist::Zilla::Plugin::Alien>
+
+L<Dist::Zilla::Plugin::Authority>
+
+L<Dist::Zilla::Plugin::BumpVersionFromGit>
+
+L<Dist::Zilla::PluginBundle::Git>
+
+L<Dist::Zilla::Plugin::ChangelogFromGit>
+
+L<Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch>
+
+L<Dist::Zilla::Plugin::GithubMeta>
+
+L<Dist::Zilla::Plugin::InstallRelease>
+
+L<Dist::Zilla::Plugin::MakeMaker::SkipInstall>
+
+L<Dist::Zilla::Plugin::PodWeaver>
+
+L<Dist::Zilla::Plugin::Repository>
+
+L<Dist::Zilla::Plugin::Run>
+
+L<Dist::Zilla::Plugin::TaskWeaver>
+
+L<Dist::Zilla::Plugin::UploadToDuckPAN>
 
 =head1 AUTHOR
 

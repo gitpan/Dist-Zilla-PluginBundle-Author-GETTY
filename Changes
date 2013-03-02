@@ -3,8 +3,14 @@ Changes from 1739-05-19 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.010 at 2013-03-02 19:21:59 +0000
+version 0.011 at 2013-03-02 22:56:30 +0000
 ------------------------------------------
+
+  Change: bc548ea4703ed028eabef9b0efb769a4726f03e7
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-03-02 23:54:30 +0000
+
+    Bumped requirement versions, tuned documentation massivly 
 
   Change: 2ab7b9b1e78d35d93f184e2fdae63583138f6f04
   Author: Torsten Raudssus <torsten@raudss.us>
