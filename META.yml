@@ -3,6 +3,7 @@ abstract: 'BeLike::GETTY when you build your dists'
 author:
   - 'Torsten Raudssus <torsten@raudss.us> L<http://www.raudss.us/>'
 build_requires:
+  Test::LoadAllModules: 0.021
   Test::More: 0.98
 configure_requires:
   ExtUtils::MakeMaker: 6.30
@@ -34,7 +35,7 @@ requires:
 resources:
   homepage: https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty
   repository: https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty.git
-version: 0.009
+version: 0.010
 x_Dist_Zilla:
   perl:
     version: 5.014002
@@ -141,7 +142,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Prereqs:
           phase: test
           type: requires
-      name: '@Author::GETTY/TestMoreWithSubtests'
+      name: '@Author::GETTY/TestsOfAuthorGETTY'
       version: 4.300030
     -
       class: Dist::Zilla::Plugin::ChangelogFromGit

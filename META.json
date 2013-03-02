@@ -47,6 +47,7 @@
       },
       "test" : {
          "requires" : {
+            "Test::LoadAllModules" : "0.021",
             "Test::More" : "0.98"
          }
       }
@@ -60,7 +61,7 @@
          "web" : "https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty"
       }
    },
-   "version" : "0.009",
+   "version" : "0.010",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.014002"
@@ -194,7 +195,7 @@
                   "type" : "requires"
                }
             },
-            "name" : "@Author::GETTY/TestMoreWithSubtests",
+            "name" : "@Author::GETTY/TestsOfAuthorGETTY",
             "version" : "4.300030"
          },
          {

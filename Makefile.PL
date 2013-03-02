@@ -12,6 +12,7 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "BeLike::GETTY when you build your dists",
   "AUTHOR" => "Torsten Raudssus <torsten\@raudss.us> L<http://www.raudss.us/>",
   "BUILD_REQUIRES" => {
+    "Test::LoadAllModules" => "0.021",
     "Test::More" => "0.98"
   },
   "CONFIGURE_REQUIRES" => {
@@ -40,7 +41,7 @@ my %WriteMakefileArgs = (
     "Pod::Elemental::Transformer::List" => "0.101620",
     "Pod::Weaver" => "3.100310"
   },
-  "VERSION" => "0.009",
+  "VERSION" => "0.010",
   "test" => {
     "TESTS" => "t/*.t"
   }

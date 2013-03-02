@@ -5,7 +5,7 @@ BEGIN {
   $Pod::Weaver::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Pod::Weaver::PluginBundle::Author::GETTY::VERSION = '0.009';
+  $Pod::Weaver::PluginBundle::Author::GETTY::VERSION = '0.010';
 }
 # ABSTRACT: GETTY's default Pod::Weaver config
 
@@ -60,7 +60,7 @@ Pod::Weaver::PluginBundle::Author::GETTY - GETTY's default Pod::Weaver config
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 DESCRIPTION
 

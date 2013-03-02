@@ -3,8 +3,14 @@ Changes from 1739-05-19 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.009 at 2013-03-02 17:03:19 +0000
+version 0.010 at 2013-03-02 19:21:59 +0000
 ------------------------------------------
+
+  Change: 2ab7b9b1e78d35d93f184e2fdae63583138f6f04
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-03-02 20:21:42 +0000
+
+    Option to directly add [Alien] for the test 
 
   Change: cfa7c792eaa374feea358c1ff4d9e6fca32f5d46
   Author: Torsten Raudssus <torsten@raudss.us>
