@@ -40,9 +40,9 @@
             "Dist::Zilla::Plugin::Repository" : "0.19",
             "Dist::Zilla::Plugin::Run" : "0.018",
             "Dist::Zilla::Plugin::TaskWeaver" : "0.101624",
+            "Dist::Zilla::Plugin::TravisYML" : "0.96",
             "Dist::Zilla::Plugin::UploadToDuckPAN" : "0.002",
             "Dist::Zilla::PluginBundle::Git" : "2.009",
-            "Dist::Zilla::TravisCI" : "0.96",
             "Pod::Elemental" : "0.102362",
             "Pod::Elemental::Transformer::List" : "0.101620",
             "Pod::Weaver" : "3.101638"
@@ -64,7 +64,7 @@
          "web" : "https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty"
       }
    },
-   "version" : "0.012",
+   "version" : "0.013",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.014002"
