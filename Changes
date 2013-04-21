@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1739-07-07 00:00:00 +0000 to present.
+Changes from 1739-07-08 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.013 at 2013-04-20 23:21:42 +0000
+version 0.014 at 2013-04-21 00:02:04 +0000
 ------------------------------------------
+
+  Change: 5b9bb160fec55739922028b871ce747d8eb61105
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-04-21 02:01:41 +0000
+
+    Added switch to deactivate ChangelogFromGit in favour for NextRelease 
 
   Change: 5877f308a518ba2eedffdd5ec102c74391bffd21
   Author: Torsten Raudssus <torsten@raudss.us>
