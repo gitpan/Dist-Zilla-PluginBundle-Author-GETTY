@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.014';
+  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.015';
 }
 # ABSTRACT: BeLike::GETTY when you build your dists
 
@@ -219,7 +219,7 @@ sub configure {
 
   unless ($self->no_travis) {
     $self->add_plugins(qw(
-      TravisYML
+      TravisCI
     ));
   }
 
@@ -309,6 +309,7 @@ no Moose;
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -317,7 +318,7 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =head1 SYNOPSIS
 
@@ -358,7 +359,7 @@ In default configuration it is equivalent to:
   [NextRelease]
   [PodSyntaxTests]
   [GithubMeta]
-  [TravisYML]
+  [TravisCI]
 
   [InstallRelease]
   install_command = cpanm .
@@ -448,8 +449,8 @@ By default a dzil release would release to L<CPAN|http://www.cpan.org/>.
 
 =head2 no_travis
 
-If set to 1, this attribute will disable L<Dist::Zilla::TravisCI>. By default a
-dzil build or release would also generate a B<.travis.yml>.
+If set to 1, this attribute will disable L<Dist::Zilla::Plugin::TravisCI>. By
+default a dzil build or release would also generate a B<.travis.yml>.
 
 =head2 no_changelog_from_git
 
@@ -521,7 +522,7 @@ L<Dist::Zilla::Plugin::TaskWeaver>
 
 L<Dist::Zilla::Plugin::UploadToDuckPAN>
 
-L<Dist::Zilla::TravisCI>
+L<Dist::Zilla::Plugin::TravisCI>
 
 =head1 AUTHOR
 
@@ -535,4 +536,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

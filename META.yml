@@ -8,7 +8,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.130880'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -29,7 +29,7 @@ requires:
   Dist::Zilla::Plugin::Repository: 0.19
   Dist::Zilla::Plugin::Run: 0.018
   Dist::Zilla::Plugin::TaskWeaver: 0.101624
-  Dist::Zilla::Plugin::TravisYML: 0.96
+  Dist::Zilla::Plugin::TravisCI: 0
   Dist::Zilla::Plugin::UploadToDuckPAN: 0.002
   Dist::Zilla::PluginBundle::Git: 2.009
   Pod::Elemental: 0.102362
@@ -38,10 +38,10 @@ requires:
 resources:
   homepage: https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty
   repository: https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty.git
-version: 0.014
+version: 0.015
 x_Dist_Zilla:
   perl:
-    version: 5.014002
+    version: 5.016003
   plugins:
     -
       class: Dist::Zilla::Plugin::GatherDir
@@ -128,9 +128,9 @@ x_Dist_Zilla:
       name: '@Author::GETTY/GithubMeta'
       version: 0.28
     -
-      class: Dist::Zilla::Plugin::TravisYML
-      name: '@Author::GETTY/TravisYML'
-      version: 0.96
+      class: Dist::Zilla::Plugin::TravisCI
+      name: '@Author::GETTY/TravisCI'
+      version: 0.001
     -
       class: Dist::Zilla::Plugin::InstallRelease
       name: '@Author::GETTY/InstallRelease'

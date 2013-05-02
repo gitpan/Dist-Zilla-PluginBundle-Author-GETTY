@@ -5,7 +5,7 @@ BEGIN {
   $Pod::Weaver::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 {
-  $Pod::Weaver::PluginBundle::Author::GETTY::VERSION = '0.014';
+  $Pod::Weaver::PluginBundle::Author::GETTY::VERSION = '0.015';
 }
 # ABSTRACT: GETTY's default Pod::Weaver config
 
@@ -52,6 +52,7 @@ sub mvp_bundle_config {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -60,7 +61,7 @@ Pod::Weaver::PluginBundle::Author::GETTY - GETTY's default Pod::Weaver config
 
 =head1 VERSION
 
-version 0.014
+version 0.015
 
 =head1 DESCRIPTION
 
@@ -94,4 +95,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

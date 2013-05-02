@@ -34,7 +34,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::Repository" => "0.19",
     "Dist::Zilla::Plugin::Run" => "0.018",
     "Dist::Zilla::Plugin::TaskWeaver" => "0.101624",
-    "Dist::Zilla::Plugin::TravisYML" => "0.96",
+    "Dist::Zilla::Plugin::TravisCI" => 0,
     "Dist::Zilla::Plugin::UploadToDuckPAN" => "0.002",
     "Dist::Zilla::PluginBundle::Git" => "2.009",
     "Pod::Elemental" => "0.102362",
@@ -45,7 +45,7 @@ my %WriteMakefileArgs = (
     "Test::LoadAllModules" => "0.021",
     "Test::More" => "0.96"
   },
-  "VERSION" => "0.014",
+  "VERSION" => "0.015",
   "test" => {
     "TESTS" => "t/*.t"
   }

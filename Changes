@@ -1,10 +1,16 @@
 ==================================================
-Changes from 1739-07-08 00:00:00 +0000 to present.
+Changes from 1739-07-19 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.014 at 2013-04-21 00:02:04 +0000
+version 0.015 at 2013-05-02 11:55:54 +0000
 ------------------------------------------
+
+  Change: 7c2b309939dbde955477715edb052dc0a4987ee1
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-05-02 07:55:41 +0000
+
+    Switched over to [TravisCI] 
 
   Change: 5b9bb160fec55739922028b871ce747d8eb61105
   Author: Torsten Raudssus <torsten@raudss.us>
