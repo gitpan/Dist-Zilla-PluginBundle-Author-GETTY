@@ -1,10 +1,17 @@
 ==================================================
-Changes from 1739-07-19 00:00:00 +0000 to present.
+Changes from 1740-03-11 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.015 at 2013-05-02 11:55:54 +0000
+version 0.016 at 2013-12-24 00:45:13 +0000
 ------------------------------------------
+
+  Change: 45f49f500485a14879d5dd5ca653c81b4d2094cd
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2013-12-24 01:44:53 +0000
+
+    Several changes involving adding more no_ parameter for non cpan
+    distributions 
 
   Change: 7c2b309939dbde955477715edb052dc0a4987ee1
   Author: Torsten Raudssus <torsten@raudss.us>

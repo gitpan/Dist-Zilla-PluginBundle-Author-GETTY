@@ -8,7 +8,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.130880'
+generated_by: 'Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -38,87 +38,87 @@ requires:
 resources:
   homepage: https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty
   repository: https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty.git
-version: 0.015
+version: 0.016
 x_Dist_Zilla:
   perl:
-    version: 5.016003
+    version: 5.018001
   plugins:
     -
       class: Dist::Zilla::Plugin::GatherDir
       name: '@Author::GETTY/@Basic/GatherDir'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::PruneCruft
       name: '@Author::GETTY/@Basic/PruneCruft'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::ManifestSkip
       name: '@Author::GETTY/@Basic/ManifestSkip'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::MetaYAML
       name: '@Author::GETTY/@Basic/MetaYAML'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::License
       name: '@Author::GETTY/@Basic/License'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::Readme
       name: '@Author::GETTY/@Basic/Readme'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::ExtraTests
       name: '@Author::GETTY/@Basic/ExtraTests'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::ExecDir
       name: '@Author::GETTY/@Basic/ExecDir'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::ShareDir
       name: '@Author::GETTY/@Basic/ShareDir'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::MakeMaker
       name: '@Author::GETTY/@Basic/MakeMaker'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::Manifest
       name: '@Author::GETTY/@Basic/Manifest'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::TestRelease
       name: '@Author::GETTY/@Basic/TestRelease'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::ConfirmRelease
       name: '@Author::GETTY/@Basic/ConfirmRelease'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
       name: '@Author::GETTY/@Basic/UploadToCPAN'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::GETTY/Git::NextVersion'
-      version: 2.013
+      version: 2.019
     -
       class: Dist::Zilla::Plugin::PkgVersion
       name: '@Author::GETTY/PkgVersion'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@Author::GETTY/MetaConfig'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::MetaJSON
       name: '@Author::GETTY/MetaJSON'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::PodSyntaxTests
       name: '@Author::GETTY/PodSyntaxTests'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::Repository
       name: '@Author::GETTY/Repository'
@@ -126,11 +126,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::GithubMeta
       name: '@Author::GETTY/GithubMeta'
-      version: 0.28
+      version: 0.42
     -
       class: Dist::Zilla::Plugin::TravisCI
       name: '@Author::GETTY/TravisCI'
-      version: 0.001
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::InstallRelease
       name: '@Author::GETTY/InstallRelease'
@@ -142,7 +142,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch
       name: '@Author::GETTY/Git::CheckFor::CorrectBranch'
-      version: 0.006
+      version: 0.008
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:
@@ -150,31 +150,110 @@ x_Dist_Zilla:
           phase: test
           type: requires
       name: '@Author::GETTY/TestsOfAuthorGETTY'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::ChangelogFromGit
       name: '@Author::GETTY/ChangelogFromGit'
-      version: 0.006
+      version: 0.015
     -
       class: Dist::Zilla::Plugin::PodWeaver
+      config:
+        Dist::Zilla::Plugin::PodWeaver:
+          config_plugin: '@Author::GETTY'
+          finder:
+            - ':InstallModules'
+            - ':ExecFiles'
+          plugins:
+            -
+              class: Pod::Weaver::Plugin::EnsurePod5
+              name: '@CorePrep/EnsurePod5'
+              version: 4.005
+            -
+              class: Pod::Weaver::Plugin::H1Nester
+              name: '@CorePrep/H1Nester'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Name
+              name: '@GETTY/Name'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Version
+              name: '@GETTY/Version'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Region
+              name: '@GETTY/Prelude'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Generic
+              name: '@GETTY/Synopsis'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Generic
+              name: '@GETTY/Description'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Generic
+              name: '@GETTY/Overview'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Generic
+              name: '@GETTY/Stability'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Collect
+              name: Attributes
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Collect
+              name: Methods
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Collect
+              name: Functions
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Leftovers
+              name: '@GETTY/Leftovers'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Region
+              name: '@GETTY/postlude'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Bugs
+              name: '@GETTY/Bugs'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Authors
+              name: '@GETTY/Authors'
+              version: 4.005
+            -
+              class: Pod::Weaver::Section::Legal
+              name: '@GETTY/Legal'
+              version: 4.005
+            -
+              class: Pod::Weaver::Plugin::Transformer
+              name: '@GETTY/List'
+              version: 4.005
       name: '@Author::GETTY/PodWeaver'
-      version: 3.101641
+      version: 4.002
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: '@Author::GETTY/@Git/Check'
-      version: 2.013
+      version: 2.019
     -
       class: Dist::Zilla::Plugin::Git::Commit
       name: '@Author::GETTY/@Git/Commit'
-      version: 2.013
+      version: 2.019
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Author::GETTY/@Git/Tag'
-      version: 2.013
+      version: 2.019
     -
       class: Dist::Zilla::Plugin::Git::Push
       name: '@Author::GETTY/@Git/Push'
-      version: 2.013
+      version: 2.019
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:
@@ -182,34 +261,34 @@ x_Dist_Zilla:
           phase: runtime
           type: requires
       name: Prereqs
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':IncModules'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':TestFiles'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ExecFiles'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':ShareFiles'
-      version: 4.300034
+      version: 5.006
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':MainModule'
-      version: 4.300034
+      version: 5.006
   zilla:
     class: Dist::Zilla::Dist::Builder
     config:
       is_trial: 0
-    version: 4.300034
+    version: 5.006
 x_authority: cpan:GETTY
