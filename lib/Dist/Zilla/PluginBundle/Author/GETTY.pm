@@ -2,11 +2,8 @@ package Dist::Zilla::PluginBundle::Author::GETTY;
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
-{
-  $Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.016';
-}
 # ABSTRACT: BeLike::GETTY when you build your dists
-
+$Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.100';
 use Moose;
 use Moose::Autobox;
 use Dist::Zilla;
@@ -334,14 +331,7 @@ sub configure {
     },
   ]);
 
-  $self->add_plugins(
-    [ Prereqs => 'TestsOfAuthorGETTY' => {
-      -phase => 'test',
-      -type => 'requires',
-      'Test::More' => '0.96',
-      'Test::LoadAllModules' => '0.021',
-    } ],
-  );
+  $self->add_plugins('Prereqs::FromCPANfile');
 
   unless ($self->no_changes) {
     if ($self->no_changelog_from_git) {
@@ -391,7 +381,7 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.016
+version 0.100
 
 =head1 SYNOPSIS
 
