@@ -24,9 +24,33 @@
             "Test::Pod" : "1.41"
          }
       },
+      "runtime" : {
+         "requires" : {
+            "App::cpanminus" : "1.6002",
+            "Dist::Zilla" : "4.300030",
+            "Dist::Zilla::Plugin::Alien" : "0.007",
+            "Dist::Zilla::Plugin::Authority" : "1.006",
+            "Dist::Zilla::Plugin::BumpVersionFromGit" : "0.009",
+            "Dist::Zilla::Plugin::ChangelogFromGit" : "0.006",
+            "Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch" : "0.006",
+            "Dist::Zilla::Plugin::GithubMeta" : "0.28",
+            "Dist::Zilla::Plugin::InstallRelease" : "0.008",
+            "Dist::Zilla::Plugin::MakeMaker::SkipInstall" : "1.100",
+            "Dist::Zilla::Plugin::PodWeaver" : "3.101641",
+            "Dist::Zilla::Plugin::Prereqs::FromCPANfile" : "0",
+            "Dist::Zilla::Plugin::Repository" : "0.19",
+            "Dist::Zilla::Plugin::Run" : "0.018",
+            "Dist::Zilla::Plugin::TaskWeaver" : "0.101624",
+            "Dist::Zilla::Plugin::TravisCI" : "0",
+            "Dist::Zilla::Plugin::UploadToDuckPAN" : "0.002",
+            "Dist::Zilla::PluginBundle::Git" : "2.009",
+            "Pod::Elemental" : "0.102362",
+            "Pod::Elemental::Transformer::List" : "0.101620",
+            "Pod::Weaver" : "3.101638"
+         }
+      },
       "test" : {
          "requires" : {
-            "Test::LoadAllModules" : "0.021",
             "Test::More" : "0.96"
          }
       }
@@ -40,7 +64,7 @@
          "web" : "https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty"
       }
    },
-   "version" : "0.100",
+   "version" : "0.101",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018001"
@@ -177,15 +201,9 @@
             "version" : "0.011"
          },
          {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "test",
-                  "type" : "requires"
-               }
-            },
-            "name" : "@Author::GETTY/TestsOfAuthorGETTY",
-            "version" : "5.015"
+            "class" : "Dist::Zilla::Plugin::Prereqs::FromCPANfile",
+            "name" : "@Author::GETTY/Prereqs::FromCPANfile",
+            "version" : "0.06"
          },
          {
             "class" : "Dist::Zilla::Plugin::ChangelogFromGit",

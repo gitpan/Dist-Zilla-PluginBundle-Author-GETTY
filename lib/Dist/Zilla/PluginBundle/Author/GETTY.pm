@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: BeLike::GETTY when you build your dists
-$Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.100';
+$Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.101';
 use Moose;
 use Moose::Autobox;
 use Dist::Zilla;
@@ -381,7 +381,7 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.100
+version 0.101
 
 =head1 SYNOPSIS
 
