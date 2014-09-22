@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: BeLike::GETTY when you build your dists
-$Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.101';
+$Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.102';
 use Moose;
 use Moose::Autobox;
 use Dist::Zilla;
@@ -148,7 +148,7 @@ for my $attr (@run_attributes) {
   );
 }
 
-my @alien_options = qw( repo name bins pattern_prefix pattern_suffix pattern_version pattern );
+my @alien_options = qw( repo name bins pattern_prefix pattern_suffix pattern_version pattern autoconf_with_pic isolate_dynamic );
 
 my @alien_attributes = map { 'alien_'.$_ } @alien_options;
 
@@ -157,7 +157,7 @@ for my $attr (@alien_attributes) {
     is      => 'ro',
     isa     => 'Str',
     lazy    => 1,
-    default => sub { $_[0]->payload->{$attr} || "" },
+    default => sub { defined $_[0]->payload->{$attr} ? $_[0]->payload->{$attr} : "" },
   );
 }
 
@@ -293,7 +293,7 @@ sub configure {
     my %alien_values;
     for (@alien_options) {
       my $func = 'alien_'.$_;
-      $alien_values{$_} = $self->$func if $self->$func;
+      $alien_values{$_} = $self->$func if defined $self->$func && $self->$func ne '';
     }
     $self->add_plugins([
       'Alien' => \%alien_values,
@@ -381,7 +381,7 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.101
+version 0.102
 
 =head1 SYNOPSIS
 
