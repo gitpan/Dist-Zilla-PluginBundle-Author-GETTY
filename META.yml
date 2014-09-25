@@ -38,11 +38,21 @@ requires:
 resources:
   homepage: https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty
   repository: https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty.git
-version: '0.103'
+version: '0.104'
 x_Dist_Zilla:
   perl:
     version: '5.018001'
   plugins:
+    -
+      class: Dist::Zilla::Plugin::Bootstrap::lib
+      config:
+        Dist::Zilla::Role::Bootstrap:
+          distname: Dist-Zilla-PluginBundle-Author-GETTY
+          fallback: '1'
+          try_built: '1'
+          try_built_method: mtime
+      name: Bootstrap::lib
+      version: '1.001000'
     -
       class: Dist::Zilla::Plugin::GatherDir
       name: '@Author::GETTY/@Basic/GatherDir'
@@ -286,7 +296,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: '0.103'
+          tag: '0.104'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
