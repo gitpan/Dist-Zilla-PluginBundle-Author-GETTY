@@ -5,7 +5,7 @@ BEGIN {
   $Pod::Weaver::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: GETTY's default Pod::Weaver config
-$Pod::Weaver::PluginBundle::Author::GETTY::VERSION = '0.104';
+$Pod::Weaver::PluginBundle::Author::GETTY::VERSION = '0.105';
 
 use Pod::Weaver::Config::Assembler;
 sub _exp { Pod::Weaver::Config::Assembler->expand_package($_[0]) }
@@ -58,7 +58,7 @@ Pod::Weaver::PluginBundle::Author::GETTY - GETTY's default Pod::Weaver config
 
 =head1 VERSION
 
-version 0.104
+version 0.105
 
 =head1 DESCRIPTION
 
@@ -86,7 +86,7 @@ Torsten Raudssus <torsten@raudss.us> L<http://www.raudss.us/>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Torsten Raudssus L<http://www.raudss.us/>.
+This software is copyright (c) 2014 by Torsten Raudssus L<http://www.raudss.us/>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

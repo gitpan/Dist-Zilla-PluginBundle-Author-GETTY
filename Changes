@@ -1,10 +1,17 @@
 ==================================================
-Changes from 1740-12-11 00:00:00 +0000 to present.
+Changes from 1741-02-10 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.104 at 2014-09-25 12:44:09 +0000
+version 0.105 at 2014-11-25 16:14:11 +0000
 ------------------------------------------
+
+  Change: ca257a1e99a1a3fc9bd030fd82944ad9f4319567
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-11-25 17:13:47 +0000
+
+    Removed legacy, fixed the Repository<=>GithubMeta collide introduced
+    by latest Dist::Zilla updates 
 
   Change: c79751110c8c3452409f3a159768ddb3452381ad
   Author: Torsten Raudssus <torsten@raudss.us>

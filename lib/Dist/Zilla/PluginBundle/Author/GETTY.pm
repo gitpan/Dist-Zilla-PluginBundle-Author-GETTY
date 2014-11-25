@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: BeLike::GETTY when you build your dists
-$Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.104';
+$Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.105';
 use Moose;
 use Moose::Autobox;
 use Dist::Zilla;
@@ -57,11 +57,11 @@ has release_branch => (
   default => sub { $_[0]->payload->{release_branch} || 'master' },
 );
 
-has duckpan => (
+has no_github => (
   is      => 'ro',
   isa     => 'Bool',
   lazy    => 1,
-  default => sub { $_[0]->payload->{duckpan} },
+  default => sub { $_[0]->payload->{no_github} },
 );
 
 has no_cpan => (
@@ -220,12 +220,6 @@ sub configure {
     $self->add_bundle('@Basic');
   }
 
-  if ($self->duckpan) {
-    $self->add_plugins(qw(
-      UploadToDuckPAN
-    ));
-  }
-
   if ($self->no_install) {
     $self->add_plugins(qw(
       MakeMaker::SkipInstall
@@ -270,9 +264,9 @@ sub configure {
 		MetaConfig
 		MetaJSON
 		PodSyntaxTests
-		Repository
-		GithubMeta
-	));
+  ));
+
+  $self->add_plugins($self->no_github ? 'Repository' : 'GithubMeta');
 
   unless ($self->no_travis) {
     $self->add_plugins([
@@ -381,7 +375,7 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.104
+version 0.105
 
 =head1 SYNOPSIS
 
@@ -405,7 +399,6 @@ are default):
   weaver_config = @Author::GETTY
   no_cpan = 0
   no_travis = 0
-  duckpan = 0
   no_install = 0
   no_makemaker = 0
   no_installrelease = 0
@@ -482,7 +475,7 @@ You can use all options of L<Dist::Zilla::Plugin::TravisCI> just by prefix
 them with B<travis_>, like here:
 
   [@Author::GETTY]
-  travis_before_install = duckpan DDGC::Static
+  travis_before_install = install_additional_packages.sh
 
 It also combines on request with L<Dist::Zilla::Plugin::Alien>, you can set
 all parameter of the Alien plugin here, just by preceeding with I<alien_>, the
@@ -514,6 +507,11 @@ will be allowed. See L<Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch/release
 This defines the L<PodWeaver> config that is used. See B<config_plugin> on
 L<Dist::Zilla::Plugin::PodWeaver>.
 
+=head2 no_github
+
+If set to 1, this attribute will disable L<Dist::Zilla::Plugin::GithubMeta> and
+will add L<Dist::Zilla::Plugin::Repository> instead.
+
 =head2 no_cpan
 
 If set to 1, this attribute will disable L<Dist::Zilla::Plugin::UploadToCPAN>.
@@ -537,15 +535,6 @@ L<Dist::Zilla::Plugin::NextRelease> will be used.
 =head2 no_podweaver
 
 If set to 1, then L<Dist::Zilla::Plugin::PodWeaver> is not used.
-
-=head2 duckpan
-
-If set to 1, this attribute will activate L<Dist::Zilla::Plugin::UploadToDuckPAN>.
-With this way you upload your distribution to L<DuckPAN|http://duckpan.org>. So
-far only employee of L<DuckDuckGo|http://duckduckgo.com> can use this option.
-This attribute is NOT disabling the upload to CPAN. So if L</no_cpan> isn't
-set, the distribution will be uploaded to both. For more information about
-DuckPAN you can also go to the L<DuckDuckGo Community Platform|https://dukgo.com/>.
 
 =head2 no_install
 
@@ -601,8 +590,6 @@ L<Dist::Zilla::Plugin::Run>
 
 L<Dist::Zilla::Plugin::TaskWeaver>
 
-L<Dist::Zilla::Plugin::UploadToDuckPAN>
-
 L<Dist::Zilla::Plugin::TravisCI>
 
 =head1 AUTHOR
@@ -611,7 +598,7 @@ Torsten Raudssus <torsten@raudss.us> L<http://www.raudss.us/>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Torsten Raudssus L<http://www.raudss.us/>.
+This software is copyright (c) 2014 by Torsten Raudssus L<http://www.raudss.us/>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -4,7 +4,7 @@
       "Torsten Raudssus <torsten@raudss.us> L<http://www.raudss.us/>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060",
+   "generated_by" : "Dist::Zilla version 5.025, CPAN::Meta::Converter version 2.143240",
    "license" : [
       "perl_5"
    ],
@@ -42,7 +42,6 @@
             "Dist::Zilla::Plugin::Run" : "0.018",
             "Dist::Zilla::Plugin::TaskWeaver" : "0.101624",
             "Dist::Zilla::Plugin::TravisCI" : "0",
-            "Dist::Zilla::Plugin::UploadToDuckPAN" : "0.002",
             "Dist::Zilla::PluginBundle::Git" : "2.009",
             "Pod::Elemental" : "0.102362",
             "Pod::Elemental::Transformer::List" : "0.101620",
@@ -64,7 +63,7 @@
          "web" : "https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty"
       }
    },
-   "version" : "0.104",
+   "version" : "0.105",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018001"
@@ -76,7 +75,7 @@
                "Dist::Zilla::Role::Bootstrap" : {
                   "distname" : "Dist-Zilla-PluginBundle-Author-GETTY",
                   "fallback" : "1",
-                  "try_built" : "1",
+                  "try_built" : null,
                   "try_built_method" : "mtime"
                }
             },
@@ -85,48 +84,59 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::GatherDir",
+            "config" : {
+               "Dist::Zilla::Plugin::GatherDir" : {
+                  "exclude_filename" : [],
+                  "exclude_match" : [],
+                  "follow_symlinks" : "0",
+                  "include_dotfiles" : "0",
+                  "prefix" : "",
+                  "prune_directory" : [],
+                  "root" : "."
+               }
+            },
             "name" : "@Author::GETTY/@Basic/GatherDir",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::PruneCruft",
             "name" : "@Author::GETTY/@Basic/PruneCruft",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::ManifestSkip",
             "name" : "@Author::GETTY/@Basic/ManifestSkip",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaYAML",
             "name" : "@Author::GETTY/@Basic/MetaYAML",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::License",
             "name" : "@Author::GETTY/@Basic/License",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::Readme",
             "name" : "@Author::GETTY/@Basic/Readme",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExtraTests",
             "name" : "@Author::GETTY/@Basic/ExtraTests",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExecDir",
             "name" : "@Author::GETTY/@Basic/ExecDir",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::ShareDir",
             "name" : "@Author::GETTY/@Basic/ShareDir",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::MakeMaker",
@@ -136,27 +146,27 @@
                }
             },
             "name" : "@Author::GETTY/@Basic/MakeMaker",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::Manifest",
             "name" : "@Author::GETTY/@Basic/Manifest",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::TestRelease",
             "name" : "@Author::GETTY/@Basic/TestRelease",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::ConfirmRelease",
             "name" : "@Author::GETTY/@Basic/ConfirmRelease",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
             "name" : "@Author::GETTY/@Basic/UploadToCPAN",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
@@ -176,27 +186,22 @@
          {
             "class" : "Dist::Zilla::Plugin::PkgVersion",
             "name" : "@Author::GETTY/PkgVersion",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
             "name" : "@Author::GETTY/MetaConfig",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
             "name" : "@Author::GETTY/MetaJSON",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::PodSyntaxTests",
             "name" : "@Author::GETTY/PodSyntaxTests",
-            "version" : "5.020"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Repository",
-            "name" : "@Author::GETTY/Repository",
-            "version" : "0.20"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::GithubMeta",
@@ -206,7 +211,7 @@
          {
             "class" : "Dist::Zilla::Plugin::TravisCI",
             "name" : "@Author::GETTY/TravisCI",
-            "version" : "0.004"
+            "version" : "0.005"
          },
          {
             "class" : "Dist::Zilla::Plugin::InstallRelease",
@@ -396,7 +401,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.104",
+                  "tag" : "0.105",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -427,42 +432,42 @@
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":InstallModules",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":IncModules",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":TestFiles",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ExecFiles",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":ShareFiles",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":MainModule",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":AllFiles",
-            "version" : "5.020"
+            "version" : "5.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
             "name" : ":NoFiles",
-            "version" : "5.020"
+            "version" : "5.025"
          }
       ],
       "zilla" : {
@@ -470,7 +475,7 @@
          "config" : {
             "is_trial" : "0"
          },
-         "version" : "5.020"
+         "version" : "5.025"
       }
    },
    "x_authority" : "cpan:GETTY"
