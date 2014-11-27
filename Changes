@@ -1,10 +1,17 @@
 ==================================================
-Changes from 1741-02-10 00:00:00 +0000 to present.
+Changes from 1741-02-12 00:00:00 +0000 to present.
 ==================================================
 
 ------------------------------------------
-version 0.105 at 2014-11-25 16:14:11 +0000
+version 0.106 at 2014-11-27 04:24:16 +0000
 ------------------------------------------
+
+  Change: 72ba140dadea264c2c9a6a0867d4666e4f307a6c
+  Author: Torsten Raudssus <torsten@raudss.us>
+  Date : 2014-11-27 05:22:53 +0000
+
+    Fixed huge bug about travis and run integration, logical this gives
+    also a new .travis.yml ;) 
 
   Change: ca257a1e99a1a3fc9bd030fd82944ad9f4319567
   Author: Torsten Raudssus <torsten@raudss.us>

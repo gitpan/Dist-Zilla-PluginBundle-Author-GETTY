@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::GETTY::AUTHORITY = 'cpan:GETTY';
 }
 # ABSTRACT: BeLike::GETTY when you build your dists
-$Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.105';
+$Dist::Zilla::PluginBundle::Author::GETTY::VERSION = '0.106';
 use Moose;
 use Moose::Autobox;
 use Dist::Zilla;
@@ -144,7 +144,7 @@ for my $attr (@run_attributes) {
     is      => 'ro',
     isa     => 'ArrayRef[Str]',
     lazy    => 1,
-    default => sub { [] },
+    default => sub { defined $_[0]->payload->{$attr} ? $_[0]->payload->{$attr} : [] },
   );
 }
 
@@ -172,7 +172,7 @@ for my $attr (@travis_str_attributes) {
     is      => 'ro',
     isa     => 'Str',
     lazy    => 1,
-    default => sub { $_[0]->payload->{$attr} || "" },
+    default => sub { defined $_[0]->payload->{$attr} ? $_[0]->payload->{$attr} : "" },
   );
 }
 
@@ -190,7 +190,7 @@ for my $attr (@travis_array_attributes) {
     is      => 'ro',
     isa     => 'ArrayRef[Str]',
     lazy    => 1,
-    default => sub { [] },
+    default => sub { defined $_[0]->payload->{$attr} ? $_[0]->payload->{$attr} : [] },
   );
 }
 
@@ -375,7 +375,7 @@ Dist::Zilla::PluginBundle::Author::GETTY - BeLike::GETTY when you build your dis
 
 =head1 VERSION
 
-version 0.105
+version 0.106
 
 =head1 SYNOPSIS
 

@@ -63,7 +63,7 @@
          "web" : "https://github.com/Getty/p5-dist-zilla-pluginbundle-author-getty"
       }
    },
-   "version" : "0.105",
+   "version" : "0.106",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018001"
@@ -401,7 +401,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.105",
+                  "tag" : "0.106",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
